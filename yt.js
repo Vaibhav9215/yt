@@ -210,7 +210,7 @@ let page;
     // loader -> scroll 
     // video Name
     let videoNameElementList = await page.$$("a[id='video-title']");
-    // console.log("videoNameElementList", videoNameElementList.length);
+     console.log("videoNameElementList", videoNameElementList.length);
     // last video 
     let lastVideo = videoNameElementList[videoNameElementList.length - 1];
     // last video -> view
@@ -223,7 +223,7 @@ let page;
     console.log(timeList.length);
 
     let videosArr = [];
-    for (let i = 0; i < videoNameElementList.length; i++) {
+    for (let i = 0; i < timeList.length; i++) {
         let timeNTitleObj = await page.evaluate(getTimeAndTitle, timeList[i], videoNameElementList[i]);
         videosArr.push(timeNTitleObj);
     }
